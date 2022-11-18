@@ -3,9 +3,6 @@ hostname = miniapp.elecredit.com, 59.110.149.231, 129.211.156.213, zths.szy.cn, 
 # 微信 App 内被屏蔽链接快捷跳转
 ^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
 
-#解除TestFlight区域限制
-;^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ url script-request-body https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
-
 #企信通小程序
 ^https://miniapp.elecredit.com/ucenter_info/ url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/Alex0510/surge/surge/Script/qxt.js
 
@@ -22,7 +19,3 @@ hostname = miniapp.elecredit.com, 59.110.149.231, 129.211.156.213, zths.szy.cn, 
 
 # keep解锁会员
 ^https://(.+).gotokeep.com(/athena/v5/people/my|/nuocha/plans) url script-response-body https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/keep
-
-# > migu
-;^https:\//v.miguvideo.com\/ability\/v url script-response-body https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/migu/ability.js
-;^https:\//v.miguvideo.com\/ability\/v2\/member-info url script-response-body https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/migu/memberinfo.js
