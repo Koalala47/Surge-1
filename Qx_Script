@@ -1,4 +1,4 @@
-hostname = miniapp.elecredit.com, 59.110.149.231, 129.211.156.213, zths.szy.cn, ipadcms.caixin.com, biz.caiyunapp.com, dxy.com, vira.llsapp.com, i.xinyulib.com.cn, *.gotokeep.com, api.wscdn.vip, aiqicha.baidu.com
+hostname = miniapp.elecredit.com, 59.110.149.231, 129.211.156.213, zths.szy.cn, ipadcms.caixin.com, biz.caiyunapp.com, dxy.com, vira.llsapp.com, i.xinyulib.com.cn, *.gotokeep.com, api.wscdn.vip, aiqicha.baidu.com, *.caiyunapp.*, *cyapi*, gateway.caixin.com
 
 # 微信 App 内被屏蔽链接快捷跳转
 ^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
@@ -7,7 +7,13 @@ hostname = miniapp.elecredit.com, 59.110.149.231, 129.211.156.213, zths.szy.cn, 
 ^https://miniapp.elecredit.com/ucenter_info/ url script-response-body https://raw.githubusercontent.com/Alex0510/Eric/Alex0510/surge/surge/Script/qxt.js
 
 #彩云天气
-^https:\/\/biz.caiyunapp.com\/v2\/user\?app_name=weather url script-response-body https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/caiyun.js
+#^https:\/\/biz.caiyunapp.com\/v2\/user\?app_name=weather url script-response-body https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/caiyun.js
+
+#彩云天气pro
+^https:\/\/biz.(caiyunapp|cyapi).(com|cn)\/v2\/user url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/cytq.js
+^https:\/\/ad\.caiyunapp\.com url reject
+
+#http[s]?:\/\/biz\.(caiyunapp|cyapi)\.(com|cn)\/v2\/user
 
 # > 流利说·阅读(2022.01.16)
 //会员时长到2030年，破解的标志是打开阅读🈚️限制，不会提示会员才能看🎉
@@ -19,3 +25,6 @@ hostname = miniapp.elecredit.com, 59.110.149.231, 129.211.156.213, zths.szy.cn, 
 
 # keep解锁会员
 ^https://(.+).gotokeep.com(/athena/v5/people/my|/nuocha/plans) url script-response-body https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/keep
+
+# Caixin解锁会员
+^https?:\/\/gateway\.caixin\.com\/api\/app\-api\/auth\/(validate|validateAudioAuth) url script-response-body https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/main/js/caixin.js
