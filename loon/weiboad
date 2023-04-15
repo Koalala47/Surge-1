@@ -1,0 +1,7 @@
+[Mitm]
+hostname = api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com
+
+[Rule]
+host, sdkapp.uve.weibo.com, direct
+
+[Rewrite]
